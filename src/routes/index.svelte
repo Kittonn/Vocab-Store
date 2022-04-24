@@ -1,1 +1,7 @@
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<script>
+	import Card from '$lib/Components/Card.svelte';
+</script>
+
+<div class="p-5">
+	<Card />
+</div>

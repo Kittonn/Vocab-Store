@@ -2,4 +2,6 @@
 	import '../app.css';
 </script>
 
-<slot />
+<main class="bg-gray font-[Kanit] min-h-screen flex flex-col justify-center items-center">
+	<slot />
+</main>
