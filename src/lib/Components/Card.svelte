@@ -1,18 +1,26 @@
-<div class="bg-white text-white text-center max-w-[960px] w-full p-6 rounded-2xl">
-	<div class="flex justify-between  items-center">
-		<div class="bg-green rounded-lg px-3 py-1">1 คะแนน</div>
-		<div class="bg-dark rounded-lg px-3 py-1">1 / 110</div>
-	</div>
-	<div class="text-black text-6xl m-5">Abandon</div>
-	<div class="flex flex-col justify-center items-center">
-		<button class="bg-yellow rounded-lg p-2 text-dark w-full text-semibold text-xl">ละทิ้ง</button>
-		<button class="bg-yellow rounded-lg p-2 text-dark m-3 w-full text-semibold text-xl"
-			>อย่างยิ่ง</button
-		>
-		<button class="bg-yellow rounded-lg p-2 text-dark w-full text-semibold text-xl">สวนสนุก</button>
-		<button class="bg-yellow rounded-lg p-2 text-dark m-3 w-full text-semibold text-xl"
-			>มีความสุข</button
-		>
-	</div>
-	<button class="bg-red py-2 px-4  text-xl rounded-lg text-semibold">ยอมแพ้</button>
+<script>
+	import Exercise from '$lib/Components/Exercise/Exercise.svelte';
+	import Result from '$lib/Components/Exercise/Result.svelte';
+	import vocabStore from '$lib/Store/vocab_store';
+	let item = 0;
+	let finish = false;
+	const add_item = () => {
+		item++;
+		if (item === $vocabStore.length) {
+			finish = true;
+		}
+	};
+</script>
+
+<div class="bg-white text-white text-center  w-[350px]   shadow-md p-6 rounded-2xl">
+	{#if finish === true}
+		<Result
+			on:restart={() => {
+				finish = false;
+				item = 0;
+			}}
+		/>
+	{:else}
+		<Exercise on:add_item={add_item} currItem={item} allitem={$vocabStore.length} vocabObject={$vocabStore[item]} />
+	{/if}
 </div>
