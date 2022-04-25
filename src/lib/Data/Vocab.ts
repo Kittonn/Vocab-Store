@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { vocabI } from '$lib/Interface/vocab_interface';
 
-export const vocab: vocabI[] = [
+export const vocab: vocabI[] | any = [
 	{ id: 1, vocab: 'Guess', answer: 'เดา', a: 'จัดการ', b: 'เกิดขึ้น', c: 'เดา', d: 'เติบโต' },
 	{
 		id: 2,

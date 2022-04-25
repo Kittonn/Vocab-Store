@@ -1,8 +1,15 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import type { wrongI } from '$lib/Interface/wrong_interface';
 	const dispatch = createEventDispatcher();
+	export let score: number;
+	export let allitem: number;
+	export let wrongStore: wrongI[];
 	const restartClick = () => {
 		dispatch('restart');
+	};
+	const wrongClick = () => {
+		console.log(wrongStore);
 	};
 </script>
 
@@ -19,12 +26,13 @@
 	/>
 </div>
 <div class="text-black">
-	<div class="text-5xl font-bold m-3">3 / 10</div>
+	<div class="text-5xl font-bold m-3">{score} / {allitem}</div>
 
 	<p>คุณเก่งมากๆแล้ว พยายามสู้ๆต่อไปนะ</p>
 </div>
 <div class="flex flex-col justify-center items-center">
 	<button
+		on:click={wrongClick}
 		class="border-red border-2 m-3  text-red py-1 px-3 hover:text-white hover:bg-red rounded-lg text-semibold"
 		>ดูคำศัพท์ที่ผิด</button
 	>
