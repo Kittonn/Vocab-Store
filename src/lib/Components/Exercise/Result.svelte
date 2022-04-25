@@ -9,25 +9,13 @@
 		dispatch('restart');
 	};
 	const wrongClick = () => {
-		console.log(wrongStore);
+		dispatch('wrong');
 	};
 </script>
 
-<div class="w-full h-0 pb-[56%] relative">
-	<!-- svelte-ignore a11y-missing-attribute -->
-	<iframe
-		src="https://giphy.com/embed/BPJmthQ3YRwD6QqcVD"
-		width="100%"
-		height="100%"
-		style="position:absolute"
-		frameBorder="0"
-		class="giphy-embed"
-		allowFullScreen
-	/>
-</div>
+<img src="giphy.gif" alt="" />
 <div class="text-black">
 	<div class="text-5xl font-bold m-3">{score} / {allitem}</div>
-
 	<p>คุณเก่งมากๆแล้ว พยายามสู้ๆต่อไปนะ</p>
 </div>
 <div class="flex flex-col justify-center items-center">

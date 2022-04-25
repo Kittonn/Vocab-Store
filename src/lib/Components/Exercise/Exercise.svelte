@@ -36,4 +36,7 @@
 		>{vocabObject.d}</button
 	>
 </div>
-<button class="bg-red py-2 px-4  text-xl rounded-lg text-semibold">ยอมแพ้</button>
+<button
+	on:click={() => dispatch('break')}
+	class="bg-red py-2 px-4  text-xl rounded-lg text-semibold">ยอมแพ้</button
+>
