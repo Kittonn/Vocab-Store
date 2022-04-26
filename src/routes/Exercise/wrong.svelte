@@ -1,6 +1,6 @@
 <script lang="ts">
 	import wrong_store from '$lib/Store/wrong_store';
-	console.table($wrong_store);
+
 	let item = 0;
 	const inc = () => {
 		if (item !== $wrong_store.length - 1) {

@@ -1,7 +1,10 @@
+<script lang="ts">
+	import Header from './Header.svelte';
+</script>
+
 <div class="text-center">
 	<div class="animate-bounce">
-		<h1 class="text-[100px] font-[Poppins] leading-[9px]">Vocab</h1>
-		<p class="text-7xl  font-[Allura] text-green">Store</p>
+		<Header />
 	</div>
 	<div class="mt-4">
 		<a
