@@ -5,6 +5,7 @@
 	import vocab_store from '$lib/Store/vocab_store';
 	import score_store from '$lib/Store/score_store';
 	import { goto } from '$app/navigation';
+	import wrong_store from '$lib/Store/wrong_store';
 
 	const db = getFirestore(app);
 	let list: any = [];
@@ -30,6 +31,15 @@
 		if ($vocab_store[item].answer === $vocab_store[item][choice]) {
 			score_store.update((curr) => {
 				return { ...curr, score: curr.score + 1 };
+			});
+		} else {
+			wrong_store.update((curr) => {
+				let wrong_ans = {
+					vocab: $vocab_store[item].vocab,
+					choose: $vocab_store[item][choice],
+					answer: $vocab_store[item].answer
+				};
+				return [...curr, wrong_ans];
 			});
 		}
 		setTimeout(() => {
