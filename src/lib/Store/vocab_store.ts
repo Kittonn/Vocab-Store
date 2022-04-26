@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
-import { vocab } from '$lib/Data/Vocab';
+import type { vocabI } from '$lib/Interfaces/vocab_interface';
+const vocab_list: vocabI[] = [];
 
-const vocabStore = writable(vocab);
+const vocab_store = writable(vocab_list);
 
-export default vocabStore;
+export default vocab_store;

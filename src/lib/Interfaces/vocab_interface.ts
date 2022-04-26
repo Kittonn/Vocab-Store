@@ -1,5 +1,5 @@
 export interface vocabI {
-	id:number;
+	id: string;
 	vocab: string;
 	answer: string;
 	a: string;
