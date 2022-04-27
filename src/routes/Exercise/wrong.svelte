@@ -23,6 +23,9 @@
 			href="/Exercise/result">กลับหน้าสรุปผล</a
 		>
 	{:else}
+		<div class=" flex justify-end items-center">
+			<p class=" rounded-lg px-3 py-1">{item + 1} / {$wrong_store.length}</p>
+		</div>
 		<h1 class="text-6xl">{$wrong_store[item].vocab}</h1>
 		<div class="text-xl">
 			<p class="my-3">✅ ข้อที่ถูก คือ {$wrong_store[item].answer}</p>
