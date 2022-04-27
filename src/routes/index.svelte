@@ -1,1 +1,7 @@
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<script script lang="ts">
+	import Home from '$lib/Components/Home.svelte';
+</script>
+
+<div class="p-5">
+	<Home />
+</div>
