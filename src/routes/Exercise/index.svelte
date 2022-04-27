@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { onDestroy } from 'svelte';
 	import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
-	import { app } from '$lib/firebase';
+	import { db } from '$lib/firebase';
 	import vocab_store from '$lib/Store/vocab_store';
 	import score_store from '$lib/Store/score_store';
 	import { goto } from '$app/navigation';
 	import wrong_store from '$lib/Store/wrong_store';
 
-	const db = getFirestore(app);
 	let list: any = [];
 	let reload: boolean = true;
 

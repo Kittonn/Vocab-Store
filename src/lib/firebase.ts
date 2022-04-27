@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-
+import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
 	apiKey: 'AIzaSyAlvLMeSQLbLXaLjWbVUPgGcbkqYq846LA',
 	authDomain: 'vocab-store-kittonn.firebaseapp.com',
@@ -10,3 +10,4 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
